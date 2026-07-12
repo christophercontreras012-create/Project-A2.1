@@ -265,7 +265,78 @@
             padding: 25px;
         }
 
-        @media (max-width: 850px) {
+       .professionals {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.professional-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+    transition: 0.2s;
+}
+
+.professional-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.14);
+}
+
+.profile-photo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.professional-info h3 {
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+
+.service-name {
+    color: #64748b;
+    margin-bottom: 10px;
+}
+
+.rating {
+    color: #f59e0b;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.rating span {
+    color: #334155;
+}
+
+.location {
+    color: #64748b;
+    margin-bottom: 18px;
+}
+
+.professional-card button {
+    width: 100%;
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.professional-card button:hover {
+    background: #1d4ed8;
+} @media (max-width: 850px) {
             .categories {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -402,7 +473,61 @@
             </div>
         </div>
     </section>
+<section id="featured-pros">
+    <div class="container">
 
+        <div class="section-heading">
+            <h2>Featured Local Professionals</h2>
+            <p>Browse trusted professionals ready to help.</p>
+        </div>
+
+        <div class="professionals">
+
+            <div class="professional-card">
+                <div class="profile-photo">CC</div>
+
+                <div class="professional-info">
+                    <h3>Chris Custom Installations</h3>
+                    <p class="service-name">Drapery & Shade Installation</p>
+                    <p class="rating">★★★★★ <span>5.0</span></p>
+                    <p class="location">📍 Atlanta, Georgia</p>
+                    <button onclick="showMessage('Profile pages are coming next!')">
+                        View Profile
+                    </button>
+                </div>
+            </div>
+
+            <div class="professional-card">
+                <div class="profile-photo">PC</div>
+
+                <div class="professional-info">
+                    <h3>Prestige Cleaning</h3>
+                    <p class="service-name">Home & Estate Cleaning</p>
+                    <p class="rating">★★★★★ <span>4.9</span></p>
+                    <p class="location">📍 Chamblee, Georgia</p>
+                    <button onclick="showMessage('Profile pages are coming next!')">
+                        View Profile
+                    </button>
+                </div>
+            </div>
+
+            <div class="professional-card">
+                <div class="profile-photo">AP</div>
+
+                <div class="professional-info">
+                    <h3>Atlanta Pro Wash</h3>
+                    <p class="service-name">Pressure Washing</p>
+                    <p class="rating">★★★★★ <span>4.8</span></p>
+                    <p class="location">📍 Atlanta, Georgia</p>
+                    <button onclick="showMessage('Profile pages are coming next!')">
+                        View Profile
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
     <section class="how-it-works" id="how-it-works">
         <div class="container">
 
