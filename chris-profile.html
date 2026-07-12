@@ -1,205 +1,536 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Chris Custom Installations</title>
+    <title>Chris Custom Installations | Project A</title>
 
-<style>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f4f6f9;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-header{
-    background:#2563eb;
-    color:white;
-    text-align:center;
-    padding:40px;
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #070b14;
+            color: #f8fafc;
+            line-height: 1.6;
+        }
 
-.profile{
-    max-width:900px;
-    margin:40px auto;
-    background:white;
-    padding:40px;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,.1);
-}
+        a {
+            text-decoration: none;
+        }
 
-.photo{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    background:#2563eb;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:50px;
-    margin:auto;
-}
+        header {
+            background: rgba(7, 11, 20, 0.94);
+            border-bottom: 1px solid #1e293b;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+        }
 
-h1{
-    text-align:center;
-}
+        nav {
+            max-width: 1180px;
+            margin: auto;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
 
-.rating{
-    text-align:center;
-    color:gold;
-    font-size:22px;
-}
+        .logo {
+            color: #60a5fa;
+            font-size: 27px;
+            font-weight: 900;
+        }
 
-.location{
-    text-align:center;
-    color:gray;
-}
+        .logo span {
+            color: #22c55e;
+        }
 
-button{
-    background:#22c55e;
-    color:white;
-    border:none;
-    padding:15px 30px;
-    border-radius:8px;
-    font-size:18px;
-    cursor:pointer;
-}
+        .back-link {
+            color: #cbd5e1;
+            font-weight: 700;
+        }
 
-.services li{
-    margin-bottom:10px;
-}
+        .back-link:hover {
+            color: white;
+        }
 
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-}
+        .profile-hero {
+            padding: 70px 24px 45px;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.32), transparent 35%),
+                radial-gradient(circle at 80% 60%, rgba(34, 197, 94, 0.13), transparent 35%),
+                #070b14;
+        }
 
-.pic{
-    background:#dbeafe;
-    height:150px;
-    border-radius:10px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
+        .profile-shell {
+            max-width: 1100px;
+            margin: auto;
+        }
 
-.quote{
-    text-align:center;
-    margin-top:40px;
-}
+        .profile-header-card {
+            background: linear-gradient(145deg, #111827, #0b1220);
+            border: 1px solid #273449;
+            border-radius: 22px;
+            padding: 34px;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 26px;
+            align-items: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+        }
 
-</style>
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb, #60a5fa);
+            display: grid;
+            place-items: center;
+            font-size: 38px;
+            font-weight: 900;
+            border: 4px solid rgba(255, 255, 255, 0.08);
+        }
 
+        .profile-main h1 {
+            font-size: 34px;
+            margin-bottom: 4px;
+        }
+
+        .service-title {
+            color: #94a3b8;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .rating {
+            color: #fbbf24;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .rating span,
+        .location {
+            color: #cbd5e1;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 16px;
+        }
+
+        .badge {
+            background: rgba(37, 99, 235, 0.15);
+            border: 1px solid rgba(96, 165, 250, 0.35);
+            color: #bfdbfe;
+            padding: 7px 11px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .profile-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-width: 190px;
+        }
+
+        .primary-button,
+        .secondary-button {
+            border: none;
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 15px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .primary-button {
+            background: #22c55e;
+            color: white;
+        }
+
+        .primary-button:hover {
+            background: #16a34a;
+        }
+
+        .secondary-button {
+            background: #2563eb;
+            color: white;
+        }
+
+        .secondary-button:hover {
+            background: #1d4ed8;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 24px 80px;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+
+        .stack {
+            display: grid;
+            gap: 24px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #111827, #0b1220);
+            border: 1px solid #273449;
+            border-radius: 18px;
+            padding: 28px;
+        }
+
+        .card h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .card p {
+            color: #cbd5e1;
+        }
+
+        .services-list {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .services-list li {
+            background: #0f172a;
+            border: 1px solid #273449;
+            border-radius: 10px;
+            padding: 13px 15px;
+            color: #e2e8f0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .gallery-item {
+            min-height: 170px;
+            background:
+                linear-gradient(rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0.65)),
+                linear-gradient(135deg, #1d4ed8, #0f172a);
+            border: 1px solid #334155;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            color: #bfdbfe;
+            font-weight: 800;
+        }
+
+        .review {
+            padding: 18px 0;
+            border-bottom: 1px solid #273449;
+        }
+
+        .review:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .review-stars {
+            color: #fbbf24;
+            margin-bottom: 7px;
+        }
+
+        .review-name {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .quick-facts {
+            list-style: none;
+            display: grid;
+            gap: 14px;
+        }
+
+        .quick-facts li {
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            border-bottom: 1px solid #273449;
+            padding-bottom: 12px;
+        }
+
+        .quick-facts li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .fact-label {
+            color: #94a3b8;
+        }
+
+        .fact-value {
+            font-weight: 700;
+            text-align: right;
+        }
+
+        .availability {
+            display: grid;
+            gap: 11px;
+        }
+
+        .availability-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            color: #cbd5e1;
+        }
+
+        .available {
+            color: #4ade80;
+            font-weight: 700;
+        }
+
+        footer {
+            background: #03060c;
+            border-top: 1px solid #1e293b;
+            color: #64748b;
+            text-align: center;
+            padding: 28px 20px;
+        }
+
+        @media (max-width: 850px) {
+            .profile-header-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-photo {
+                margin: auto;
+            }
+
+            .badges {
+                justify-content: center;
+            }
+
+            .profile-actions {
+                width: 100%;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
+    <nav>
+        <div class="logo">Project <span>A</span></div>
 
-<h1>Chris Custom Installations</h1>
-
+        <a href="index.html" class="back-link">
+            ← Back to Professionals
+        </a>
+    </nav>
 </header>
 
-<div class="profile">
+<section class="profile-hero">
+    <div class="profile-shell">
 
-<div class="photo">
+        <div class="profile-header-card">
 
-CC
+            <div class="profile-photo">CC</div>
 
-</div>
+            <div class="profile-main">
+                <h1>Chris Custom Installations</h1>
 
-<h1>Chris Custom Installations</h1>
+                <p class="service-title">
+                    Drapery, Shade & Window Treatment Installation
+                </p>
 
-<p class="rating">
+                <p class="rating">
+                    ★★★★★ <span>5.0 · 18 reviews</span>
+                </p>
 
-★★★★★ 5.0
+                <p class="location">
+                    📍 Atlanta, Georgia
+                </p>
 
-</p>
+                <div class="badges">
+                    <span class="badge">✓ 4+ Years Experience</span>
+                    <span class="badge">✓ Local Professional</span>
+                    <span class="badge">✓ Luxury Installations</span>
+                </div>
+            </div>
 
-<p class="location">
+            <div class="profile-actions">
+                <button
+                    class="primary-button"
+                    onclick="showMessage('The quote form is coming next!')"
+                >
+                    Request Quote
+                </button>
 
-📍 Atlanta, Georgia
+                <button
+                    class="secondary-button"
+                    onclick="showMessage('Messaging is coming next!')"
+                >
+                    Message
+                </button>
+            </div>
 
-</p>
+        </div>
+    </div>
+</section>
 
-<hr>
+<main>
 
-<h2>About Me</h2>
+    <div class="profile-grid">
 
-<p>
+        <div class="stack">
 
-Professional drapery and motorized shade installer with 4+ years of experience installing luxury window treatments.
+            <section class="card">
+                <h2>About</h2>
 
-</p>
+                <p>
+                    Professional installer with more than four years of experience
+                    working with luxury drapery, curtain rods, blinds, shutters and
+                    motorized shade systems throughout the Atlanta area.
+                </p>
+            </section>
 
-<hr>
+            <section class="card">
+                <h2>Services</h2>
 
-<h2>Services</h2>
+                <ul class="services-list">
+                    <li>✓ Drapery installation and dressing</li>
+                    <li>✓ Curtain rod and traverse rod installation</li>
+                    <li>✓ Motorized shade installation and programming</li>
+                    <li>✓ Blinds and shutters</li>
+                    <li>✓ Existing installation adjustments and repairs</li>
+                </ul>
+            </section>
 
-<ul class="services">
+            <section class="card">
+                <h2>Portfolio</h2>
 
-<li>✔ Drapery Installation</li>
+                <div class="gallery">
+                    <div class="gallery-item">Living Room Drapery</div>
+                    <div class="gallery-item">Motorized Shades</div>
+                    <div class="gallery-item">Custom Rod Installation</div>
+                </div>
+            </section>
 
-<li>✔ Curtain Rod Installation</li>
+            <section class="card">
+                <h2>Customer Reviews</h2>
 
-<li>✔ Motorized Shades</li>
+                <div class="review">
+                    <div class="review-stars">★★★★★</div>
+                    <p>
+                        Chris was professional, careful and made our curtains look perfect.
+                    </p>
+                    <div class="review-name">— Sample customer review</div>
+                </div>
 
-<li>✔ Blinds</li>
+                <div class="review">
+                    <div class="review-stars">★★★★★</div>
+                    <p>
+                        Great communication and excellent attention to detail.
+                    </p>
+                    <div class="review-name">— Sample customer review</div>
+                </div>
+            </section>
 
-<li>✔ Shutters</li>
+        </div>
 
-</ul>
+        <aside class="stack">
 
-<hr>
+            <section class="card">
+                <h2>Quick Facts</h2>
 
-<h2>Portfolio</h2>
+                <ul class="quick-facts">
+                    <li>
+                        <span class="fact-label">Experience</span>
+                        <span class="fact-value">4+ years</span>
+                    </li>
 
-<div class="gallery">
+                    <li>
+                        <span class="fact-label">Service area</span>
+                        <span class="fact-value">Metro Atlanta</span>
+                    </li>
 
-<div class="pic">Photo 1</div>
+                    <li>
+                        <span class="fact-label">Response time</span>
+                        <span class="fact-value">Usually within 1 hour</span>
+                    </li>
 
-<div class="pic">Photo 2</div>
+                    <li>
+                        <span class="fact-label">Languages</span>
+                        <span class="fact-value">English & Spanish</span>
+                    </li>
+                </ul>
+            </section>
 
-<div class="pic">Photo 3</div>
+            <section class="card">
+                <h2>Availability</h2>
 
-</div>
+                <div class="availability">
+                    <div class="availability-row">
+                        <span>Monday–Friday</span>
+                        <span class="available">Available</span>
+                    </div>
 
-<hr>
+                    <div class="availability-row">
+                        <span>Saturday</span>
+                        <span class="available">By request</span>
+                    </div>
 
-<h2>Customer Reviews</h2>
+                    <div class="availability-row">
+                        <span>Sunday</span>
+                        <span>Unavailable</span>
+                    </div>
+                </div>
+            </section>
 
-<p>
+        </aside>
 
-⭐⭐⭐⭐⭐
+    </div>
 
-Amazing work! Very professional and arrived on time.
+</main>
 
-</p>
+<footer>
+    <p>© 2026 Project A. Built in Atlanta, Georgia.</p>
+</footer>
 
-<p>
-
-⭐⭐⭐⭐⭐
-
-Highly recommend.
-
-</p>
-
-<div class="quote">
-
-<button onclick="alert('Quote system coming soon!')">
-
-Request Quote
-
-</button>
-
-</div>
-
-</div>
+<script>
+    function showMessage(message) {
+        alert(message);
+    }
+</script>
 
 </body>
-
 </html>
