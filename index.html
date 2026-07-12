@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Project A | Local Services</title>
+    <title>Project A | Local Professionals</title>
 
     <style>
         * {
@@ -13,107 +13,150 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f8fafc;
-            color: #172033;
+            background: #070b14;
+            color: #f8fafc;
             line-height: 1.6;
         }
 
         header {
-            background: white;
-            border-bottom: 1px solid #e5e7eb;
+            background: rgba(7, 11, 20, 0.92);
+            border-bottom: 1px solid #1e293b;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            backdrop-filter: blur(14px);
         }
 
         nav {
-            max-width: 1150px;
+            max-width: 1180px;
             margin: auto;
             padding: 18px 24px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             gap: 20px;
         }
 
         .logo {
-            color: #2563eb;
-            font-size: 27px;
-            font-weight: 800;
+            font-size: 28px;
+            font-weight: 900;
+            color: #60a5fa;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #22c55e;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 22px;
+            gap: 24px;
         }
 
         .nav-links a {
+            color: #cbd5e1;
             text-decoration: none;
-            color: #334155;
-            font-weight: 600;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
         }
 
         .nav-button {
             background: #2563eb;
             color: white !important;
             padding: 10px 18px;
-            border-radius: 8px;
+            border-radius: 9px;
         }
 
         .hero {
-            background: linear-gradient(135deg, #0f172a, #1d4ed8);
-            color: white;
-            padding: 95px 24px;
+            min-height: 650px;
+            display: grid;
+            place-items: center;
             text-align: center;
+            padding: 100px 24px;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.35), transparent 35%),
+                radial-gradient(circle at 80% 70%, rgba(34, 197, 94, 0.16), transparent 35%),
+                #070b14;
         }
 
         .hero-content {
-            max-width: 850px;
-            margin: auto;
+            max-width: 900px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.15);
+            border: 1px solid rgba(96, 165, 250, 0.35);
+            color: #93c5fd;
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-weight: bold;
+            margin-bottom: 24px;
         }
 
         .hero h1 {
-            font-size: 52px;
-            line-height: 1.1;
-            margin-bottom: 22px;
+            font-size: 64px;
+            line-height: 1.05;
+            letter-spacing: -3px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: #60a5fa;
         }
 
         .hero p {
+            max-width: 760px;
+            margin: 0 auto 36px;
+            color: #cbd5e1;
             font-size: 20px;
-            color: #dbeafe;
-            margin-bottom: 34px;
         }
 
         .search-box {
-            background: white;
-            max-width: 720px;
+            max-width: 760px;
             margin: auto;
-            padding: 10px;
-            border-radius: 12px;
+            padding: 9px;
             display: flex;
             gap: 10px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(30, 41, 59, 0.85);
+            border: 1px solid #334155;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
         }
 
         .search-box input {
             flex: 1;
+            background: transparent;
             border: none;
             outline: none;
-            padding: 15px;
-            font-size: 16px;
+            color: white;
+            padding: 16px;
+            font-size: 17px;
+        }
+
+        .search-box input::placeholder {
+            color: #94a3b8;
         }
 
         .search-box button {
             border: none;
             background: #22c55e;
             color: white;
-            padding: 15px 26px;
-            border-radius: 8px;
+            padding: 15px 28px;
+            border-radius: 9px;
             font-size: 16px;
-            font-weight: 700;
+            font-weight: 800;
             cursor: pointer;
         }
 
@@ -122,27 +165,62 @@
         }
 
         section {
-            padding: 75px 24px;
+            padding: 85px 24px;
         }
 
         .container {
-            max-width: 1150px;
+            max-width: 1180px;
             margin: auto;
         }
 
         .section-heading {
             text-align: center;
-            margin-bottom: 42px;
+            margin-bottom: 45px;
         }
 
         .section-heading h2 {
-            font-size: 36px;
+            font-size: 40px;
             margin-bottom: 10px;
         }
 
         .section-heading p {
-            color: #64748b;
+            color: #94a3b8;
             font-size: 18px;
+        }
+
+        .stats {
+            margin-top: -45px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid #334155;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat {
+            text-align: center;
+            padding: 30px;
+            border-right: 1px solid #334155;
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat h3 {
+            color: #60a5fa;
+            font-size: 32px;
+        }
+
+        .stat p {
+            color: #94a3b8;
         }
 
         .categories {
@@ -152,58 +230,130 @@
         }
 
         .category-card {
-            background: white;
-            padding: 28px 20px;
-            border-radius: 14px;
+            background: linear-gradient(145deg, #111827, #0f172a);
+            border: 1px solid #273449;
+            padding: 30px 22px;
+            border-radius: 16px;
             text-align: center;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 5px 16px rgba(15, 23, 42, 0.06);
-            transition: 0.2s;
+            transition: 0.25s;
             cursor: pointer;
         }
 
         .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(15, 23, 42, 0.12);
+            transform: translateY(-7px);
+            border-color: #3b82f6;
+            box-shadow: 0 16px 35px rgba(37, 99, 235, 0.15);
         }
 
         .category-icon {
-            font-size: 38px;
-            margin-bottom: 12px;
+            font-size: 42px;
+            margin-bottom: 14px;
         }
 
         .category-card h3 {
-            font-size: 19px;
+            font-size: 18px;
+        }
+
+        .featured-section {
+            background: #090f1c;
+        }
+
+        .professionals {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .professional-card {
+            background: linear-gradient(145deg, #111827, #0b1220);
+            border: 1px solid #273449;
+            border-radius: 18px;
+            padding: 28px;
+            transition: 0.25s;
+        }
+
+        .professional-card:hover {
+            transform: translateY(-7px);
+            border-color: #3b82f6;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .profile-photo {
+            width: 74px;
+            height: 74px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb, #60a5fa);
+            display: grid;
+            place-items: center;
+            font-size: 22px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .professional-card h3 {
+            font-size: 21px;
+            margin-bottom: 4px;
+        }
+
+        .service-name,
+        .location {
+            color: #94a3b8;
+        }
+
+        .rating {
+            color: #fbbf24;
+            font-weight: 800;
+            margin: 12px 0 8px;
+        }
+
+        .rating span {
+            color: #e2e8f0;
+        }
+
+        .profile-button {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 9px;
+            font-weight: 800;
+        }
+
+        .profile-button:hover {
+            background: #1d4ed8;
         }
 
         .how-it-works {
-            background: #eef4ff;
+            background: #070b14;
         }
 
         .steps {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            gap: 24px;
         }
 
         .step {
-            background: white;
-            padding: 32px;
-            border-radius: 14px;
+            background: #0f172a;
+            border: 1px solid #273449;
+            padding: 34px;
+            border-radius: 16px;
             text-align: center;
         }
 
         .step-number {
-            width: 48px;
-            height: 48px;
-            margin: 0 auto 18px;
+            width: 52px;
+            height: 52px;
+            margin: 0 auto 20px;
             border-radius: 50%;
             background: #2563eb;
-            color: white;
             display: grid;
             place-items: center;
-            font-size: 20px;
-            font-weight: bold;
+            font-size: 21px;
+            font-weight: 900;
         }
 
         .step h3 {
@@ -211,21 +361,22 @@
         }
 
         .step p {
-            color: #64748b;
+            color: #94a3b8;
         }
 
-        .join-section {
-            background: #0f172a;
-            color: white;
+        .cta {
             text-align: center;
+            background:
+                linear-gradient(rgba(7, 11, 20, 0.75), rgba(7, 11, 20, 0.75)),
+                linear-gradient(135deg, #1d4ed8, #0f172a);
         }
 
-        .join-section h2 {
-            font-size: 38px;
+        .cta h2 {
+            font-size: 42px;
             margin-bottom: 14px;
         }
 
-        .join-section p {
+        .cta p {
             color: #cbd5e1;
             font-size: 18px;
             margin-bottom: 28px;
@@ -241,10 +392,10 @@
         .primary-button,
         .secondary-button {
             border: none;
-            padding: 14px 24px;
-            border-radius: 8px;
+            padding: 14px 25px;
+            border-radius: 9px;
             font-size: 16px;
-            font-weight: 700;
+            font-weight: 800;
             cursor: pointer;
         }
 
@@ -255,98 +406,29 @@
 
         .secondary-button {
             background: white;
-            color: #172033;
+            color: #0f172a;
         }
 
         footer {
-            background: #020617;
-            color: #94a3b8;
+            background: #03060c;
+            border-top: 1px solid #1e293b;
+            color: #64748b;
             text-align: center;
-            padding: 25px;
+            padding: 30px 20px;
         }
 
-       .professionals {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 47px;
+            }
 
-.professional-card {
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 16px;
-    padding: 28px;
-    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
-    transition: 0.2s;
-}
-
-.professional-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.14);
-}
-
-.profile-photo {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    background: #2563eb;
-    color: white;
-    display: grid;
-    place-items: center;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 18px;
-}
-
-.professional-info h3 {
-    font-size: 21px;
-    margin-bottom: 5px;
-}
-
-.service-name {
-    color: #64748b;
-    margin-bottom: 10px;
-}
-
-.rating {
-    color: #f59e0b;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.rating span {
-    color: #334155;
-}
-
-.location {
-    color: #64748b;
-    margin-bottom: 18px;
-}
-
-.professional-card button {
-    width: 100%;
-    border: none;
-    background: #2563eb;
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.professional-card button:hover {
-    background: #1d4ed8;
-} @media (max-width: 850px) {
             .categories {
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .professionals,
             .steps {
                 grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 40px;
             }
 
             .nav-links a:not(.nav-button) {
@@ -354,13 +436,14 @@
             }
         }
 
-        @media (max-width: 550px) {
+        @media (max-width: 600px) {
             .hero {
-                padding: 70px 18px;
+                padding: 80px 18px;
             }
 
             .hero h1 {
-                font-size: 34px;
+                font-size: 38px;
+                letter-spacing: -1px;
             }
 
             .hero p {
@@ -371,12 +454,30 @@
                 flex-direction: column;
             }
 
+            .search-box button {
+                width: 100%;
+            }
+
             .categories {
                 grid-template-columns: 1fr;
             }
 
-            .search-box button {
-                width: 100%;
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+                border-right: none;
+                border-bottom: 1px solid #334155;
+            }
+
+            .stat:last-child {
+                border-bottom: none;
+            }
+
+            .section-heading h2,
+            .cta h2 {
+                font-size: 32px;
             }
         }
     </style>
@@ -386,13 +487,13 @@
 
 <header>
     <nav>
-        <div class="logo">Project A</div>
+        <div class="logo">Project <span>A</span></div>
 
         <div class="nav-links">
             <a href="#services">Services</a>
+            <a href="#professionals">Professionals</a>
             <a href="#how-it-works">How It Works</a>
-            <a href="#join">Become a Pro</a>
-            <a href="#join" class="nav-button">Sign Up</a>
+            <a href="#join" class="nav-button">Join Project A</a>
         </div>
     </nav>
 </header>
@@ -401,11 +502,19 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Local professionals ready to get the job done</h1>
+
+            <div class="badge">
+                Built for local businesses and skilled professionals
+            </div>
+
+            <h1>
+                Find the right local <span>professional</span> for any job
+            </h1>
 
             <p>
-                Find trusted cleaners, installers, handymen, landscapers,
-                bartenders, photographers and other skilled local professionals.
+                Discover cleaners, installers, handymen, landscapers,
+                photographers, detailers and other trusted professionals
+                serving your area.
             </p>
 
             <div class="search-box">
@@ -415,8 +524,36 @@
                     placeholder="What service do you need?"
                 >
 
-                <button onclick="searchServices()">Search</button>
+                <button onclick="searchServices()">
+                    Search
+                </button>
             </div>
+
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+
+            <div class="stats-grid">
+
+                <div class="stat">
+                    <h3>Local</h3>
+                    <p>Professionals near you</p>
+                </div>
+
+                <div class="stat">
+                    <h3>Direct</h3>
+                    <p>Connect without bidding wars</p>
+                </div>
+
+                <div class="stat">
+                    <h3>Simple</h3>
+                    <p>Find help without the hassle</p>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
@@ -425,7 +562,7 @@
 
             <div class="section-heading">
                 <h2>Popular Services</h2>
-                <p>Explore local professionals in your area.</p>
+                <p>Explore professionals ready to help with your next project.</p>
             </div>
 
             <div class="categories">
@@ -473,67 +610,74 @@
             </div>
         </div>
     </section>
-<section id="featured-pros">
-    <div class="container">
 
-        <div class="section-heading">
-            <h2>Featured Local Professionals</h2>
-            <p>Browse trusted professionals ready to help.</p>
-        </div>
+    <section class="featured-section" id="professionals">
+        <div class="container">
 
-        <div class="professionals">
+            <div class="section-heading">
+                <h2>Featured Local Professionals</h2>
+                <p>Discover skilled professionals serving the Atlanta area.</p>
+            </div>
 
-            <div class="professional-card">
-                <div class="profile-photo">CC</div>
+            <div class="professionals">
 
-                <div class="professional-info">
+                <div class="professional-card">
+                    <div class="profile-photo">CC</div>
+
                     <h3>Chris Custom Installations</h3>
                     <p class="service-name">Drapery & Shade Installation</p>
                     <p class="rating">★★★★★ <span>5.0</span></p>
                     <p class="location">📍 Atlanta, Georgia</p>
-                    <a href="chris-profile.html">
-    <button>View Profile</button>
-</a>
+
+                    <a href="chris-profile.html" class="profile-button">
+                        View Profile
+                    </a>
                 </div>
-            </div>
 
-            <div class="professional-card">
-                <div class="profile-photo">PC</div>
+                <div class="professional-card">
+                    <div class="profile-photo">PC</div>
 
-                <div class="professional-info">
                     <h3>Prestige Cleaning</h3>
                     <p class="service-name">Home & Estate Cleaning</p>
                     <p class="rating">★★★★★ <span>4.9</span></p>
                     <p class="location">📍 Chamblee, Georgia</p>
-                    <button onclick="showMessage('Profile pages are coming next!')">
+
+                    <a
+                        href="#"
+                        class="profile-button"
+                        onclick="showMessage('This profile is coming soon!')"
+                    >
                         View Profile
-                    </button>
+                    </a>
                 </div>
-            </div>
 
-            <div class="professional-card">
-                <div class="profile-photo">AP</div>
+                <div class="professional-card">
+                    <div class="profile-photo">AP</div>
 
-                <div class="professional-info">
                     <h3>Atlanta Pro Wash</h3>
                     <p class="service-name">Pressure Washing</p>
                     <p class="rating">★★★★★ <span>4.8</span></p>
                     <p class="location">📍 Atlanta, Georgia</p>
-                    <button onclick="showMessage('Profile pages are coming next!')">
-                        View Profile
-                    </button>
-                </div>
-            </div>
 
+                    <a
+                        href="#"
+                        class="profile-button"
+                        onclick="showMessage('This profile is coming soon!')"
+                    >
+                        View Profile
+                    </a>
+                </div>
+
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
     <section class="how-it-works" id="how-it-works">
         <div class="container">
 
             <div class="section-heading">
                 <h2>How Project A Works</h2>
-                <p>A simpler way to hire trusted local help.</p>
+                <p>A simpler way to hire local help.</p>
             </div>
 
             <div class="steps">
@@ -546,29 +690,32 @@
 
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Find local professionals</h3>
-                    <p>Browse skilled professionals and compare their profiles.</p>
+                    <h3>Browse professionals</h3>
+                    <p>Compare profiles, experience, locations and ratings.</p>
                 </div>
 
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Get the job done</h3>
-                    <p>Connect directly and choose the right professional for you.</p>
+                    <h3>Make a connection</h3>
+                    <p>Choose the professional who is right for your project.</p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <section class="join-section" id="join">
+    <section class="cta" id="join">
         <div class="container">
+
             <h2>Ready to get started?</h2>
 
             <p>
-                Join Project A as a customer or start earning as a local professional.
+                Find trusted local help or create a professional profile
+                and grow your business.
             </p>
 
             <div class="button-group">
+
                 <button
                     class="primary-button"
                     onclick="showMessage('Customer signup is coming next!')"
@@ -578,10 +725,11 @@
 
                 <button
                     class="secondary-button"
-                    onclick="showMessage('Contractor signup is coming next!')"
+                    onclick="showMessage('Professional signup is coming next!')"
                 >
                     Become a Professional
                 </button>
+
             </div>
         </div>
     </section>
@@ -589,7 +737,7 @@
 </main>
 
 <footer>
-    <p>© 2026 Project A. Built in Atlanta.</p>
+    <p>© 2026 Project A. Built in Atlanta, Georgia.</p>
 </footer>
 
 <script>
@@ -602,7 +750,7 @@
             return;
         }
 
-        alert("You searched for: " + service);
+        alert("Searching Project A for: " + service);
     }
 
     function showMessage(message) {
