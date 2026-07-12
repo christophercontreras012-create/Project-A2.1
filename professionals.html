@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Professionals | Project A</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="logo" href="index.html">Project <span>A</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a class="nav-cta" href="#directory">Directory</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="directory-hero">
+    <div class="container">
+      <p class="eyebrow">Atlanta demo marketplace</p>
+      <h1>Browse local professionals</h1>
+      <p>Search, filter and save sample profiles. Favorites are remembered on this device.</p>
+    </div>
+  </section>
+
+  <section class="section container" id="directory">
+    <div class="filter-panel">
+      <label>Search
+        <input id="directorySearch" type="search" placeholder="Business, service or city">
+      </label>
+      <label>Service
+        <select id="serviceFilter">
+          <option value="">All services</option>
+        </select>
+      </label>
+      <label>City
+        <select id="cityFilter">
+          <option value="">All cities</option>
+        </select>
+      </label>
+      <label>Minimum rating
+        <select id="ratingFilter">
+          <option value="0">Any rating</option>
+          <option value="4.5">4.5+</option>
+          <option value="4.8">4.8+</option>
+          <option value="5">5.0</option>
+        </select>
+      </label>
+      <label>Availability
+        <select id="availabilityFilter">
+          <option value="">Any availability</option>
+          <option value="Available today">Available today</option>
+          <option value="Available this week">Available this week</option>
+        </select>
+      </label>
+      <button class="button secondary" id="showFavorites">Show favorites</button>
+    </div>
+
+    <div class="directory-meta">
+      <span id="resultsCount"></span>
+      <button class="text-button" id="clearFilters">Clear filters</button>
+    </div>
+
+    <div class="professional-grid" id="directoryGrid"></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">© 2026 Project A. Sample directory.</div>
+</footer>
+
+<div class="modal" id="profileModal" aria-hidden="true">
+  <div class="modal-panel large">
+    <button class="modal-close" onclick="closeModal('profileModal')" aria-label="Close">×</button>
+    <div id="profileModalContent"></div>
+  </div>
+</div>
+
+<div class="modal" id="quoteModal" aria-hidden="true">
+  <div class="modal-panel">
+    <button class="modal-close" onclick="closeModal('quoteModal')" aria-label="Close">×</button>
+    <h2>Request a quote</h2>
+    <p class="muted" id="quoteProfessionalName"></p>
+    <form id="quoteForm" class="form">
+      <div class="form-row">
+        <label>Full name<input name="name" required></label>
+        <label>Phone<input name="phone" type="tel" required></label>
+      </div>
+      <div class="form-row">
+        <label>Email<input name="email" type="email" required></label>
+        <label>Preferred date<input name="date" type="date" required></label>
+      </div>
+      <label>Service<select name="service" id="quoteService" required></select></label>
+      <label>ZIP code<input name="zip" maxlength="10" required></label>
+      <label>Describe the job<textarea name="description" rows="5" required></textarea></label>
+      <button class="button primary" type="submit">Create quote request</button>
+      <small>Demo only: this is not sent or stored.</small>
+    </form>
+    <div class="success-state" id="quoteSuccess">
+      <div class="success-icon">✓</div>
+      <h3>Quote request created</h3>
+      <p>A backend is needed to deliver it to the professional.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="messageModal" aria-hidden="true">
+  <div class="modal-panel">
+    <button class="modal-close" onclick="closeModal('messageModal')" aria-label="Close">×</button>
+    <h2>Send a message</h2>
+    <p class="muted" id="messageProfessionalName"></p>
+    <form id="messageForm" class="form">
+      <label>Your name<input required></label>
+      <label>Email<input type="email" required></label>
+      <label>Message<textarea rows="6" required></textarea></label>
+      <button class="button secondary" type="submit">Create message</button>
+      <small>Demo only: the message is not delivered.</small>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

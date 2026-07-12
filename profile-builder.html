@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build Your Profile | Project A</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="logo" href="index.html">Project <span>A</span></a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="professionals.html">Directory</a>
+      <a class="nav-cta" href="index.html">Home</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="directory-hero">
+    <div class="container">
+      <p class="eyebrow">Mini website builder demo</p>
+      <h1>Create your professional profile</h1>
+      <p>Preview how a small business could build a shareable Project A page.</p>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="builder-grid">
+      <form class="form detail-card" id="profileBuilderForm">
+        <h2>Business information</h2>
+        <label>Business name<input id="builderName" value="Chris Custom Installations"></label>
+        <label>Primary service<input id="builderService" value="Drapery Installation"></label>
+        <label>City<input id="builderCity" value="Atlanta"></label>
+        <label>About<textarea id="builderAbout" rows="5">Professional installer serving Metro Atlanta.</textarea></label>
+        <label>Starting price<input id="builderPrice" type="number" value="150"></label>
+        <label>Services, separated by commas<input id="builderServices" value="Drapery Installation, Curtain Rods, Motorized Shades"></label>
+        <label>Portfolio photos<input type="file" accept="image/*" multiple></label>
+        <small>Photo previews are not uploaded in this static demo.</small>
+        <button type="button" class="button primary" onclick="updateBuilderPreview()">Update preview</button>
+        <button type="button" class="button secondary" onclick="demoSaved('Profile')">Save profile</button>
+      </form>
+
+      <section class="detail-card">
+        <p class="eyebrow">Live preview</p>
+        <div id="builderPreview"></div>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container">© 2026 Project A. Profile builder demo.</div></footer>
+<script src="script.js"></script>
+</body>
+</html>

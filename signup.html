@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Project A</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="logo" href="index.html">Project <span>A</span></a>
+    <div class="nav-links"><a href="login.html">Log in</a><a href="index.html">Home</a></div>
+  </nav>
+</header>
+<main class="auth-page">
+  <section class="auth-card">
+    <p class="eyebrow">Join Project A</p>
+    <h1>Create an account</h1>
+    <div class="account-tabs">
+      <button class="active" type="button">Customer</button>
+      <button type="button">Professional</button>
+    </div>
+    <form class="form" onsubmit="event.preventDefault(); demoSaved('Account')">
+      <label>Full name<input required></label>
+      <label>Email<input type="email" required></label>
+      <label>Phone<input type="tel" required></label>
+      <label>Password<input type="password" required></label>
+      <label class="checkbox-row"><input type="checkbox" required> I agree to the terms and privacy policy.</label>
+      <button class="button primary" type="submit">Create demo account</button>
+    </form>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

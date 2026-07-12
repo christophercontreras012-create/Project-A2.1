@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Dashboard | Project A</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container">
+    <a class="logo" href="index.html">Project <span>A</span></a>
+    <div class="nav-links">
+      <a href="professionals.html">Directory</a>
+      <a href="profile-builder.html">Edit Profile</a>
+      <a class="nav-cta" href="index.html">Home</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="directory-hero">
+    <div class="container">
+      <p class="eyebrow">Professional dashboard demo</p>
+      <h1>Welcome back, Chris</h1>
+      <p>This page uses sample data. Real numbers require accounts and a database.</p>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="dashboard-stats">
+      <article><span>Pending quotes</span><strong>3</strong></article>
+      <article><span>Messages</span><strong>7</strong></article>
+      <article><span>Profile views</span><strong>126</strong></article>
+      <article><span>Sample trust score</span><strong>86%</strong></article>
+    </div>
+
+    <div class="dashboard-grid">
+      <section class="detail-card">
+        <div class="dashboard-heading">
+          <div>
+            <p class="eyebrow">Availability</p>
+            <h2>Set your schedule</h2>
+          </div>
+          <span class="availability-badge">Available this week</span>
+        </div>
+        <div class="availability-editor">
+          <label><input type="checkbox" checked> Monday</label>
+          <label><input type="checkbox" checked> Tuesday</label>
+          <label><input type="checkbox" checked> Wednesday</label>
+          <label><input type="checkbox" checked> Thursday</label>
+          <label><input type="checkbox" checked> Friday</label>
+          <label><input type="checkbox" checked> Saturday</label>
+          <label><input type="checkbox"> Sunday</label>
+        </div>
+        <button class="button primary" onclick="demoSaved('Availability')">Save availability</button>
+      </section>
+
+      <section class="detail-card">
+        <p class="eyebrow">Pricing</p>
+        <h2>Starting prices</h2>
+        <div class="price-editor">
+          <label>Drapery installation <input type="number" value="150"></label>
+          <label>Curtain rods <input type="number" value="95"></label>
+          <label>Motorized shades <input type="number" value="225"></label>
+          <label>Repairs and adjustments <input type="number" value="85"></label>
+        </div>
+        <button class="button secondary" onclick="demoSaved('Pricing')">Save pricing</button>
+      </section>
+
+      <section class="detail-card">
+        <p class="eyebrow">Trust score</p>
+        <h2>Profile strength</h2>
+        <div class="trust-meter"><span style="width:86%"></span></div>
+        <ul class="check-list">
+          <li>✓ Phone verified</li>
+          <li>✓ Email verified</li>
+          <li>✓ Services added</li>
+          <li>✓ Portfolio added</li>
+          <li>○ Background check not connected</li>
+          <li>○ Insurance document not uploaded</li>
+        </ul>
+      </section>
+
+      <section class="detail-card">
+        <p class="eyebrow">Recent activity</p>
+        <h2>Quote requests</h2>
+        <div class="activity-list">
+          <article>
+            <strong>Motorized shade installation</strong>
+            <span>Atlanta · Preferred Saturday</span>
+            <button onclick="openDashboardItem('Motorized shade installation')">View request</button>
+          </article>
+          <article>
+            <strong>Living room drapery</strong>
+            <span>Brookhaven · Preferred Monday</span>
+            <button onclick="openDashboardItem('Living room drapery')">View request</button>
+          </article>
+          <article>
+            <strong>Rod adjustment</strong>
+            <span>Chamblee · Flexible date</span>
+            <button onclick="openDashboardItem('Rod adjustment')">View request</button>
+          </article>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container">© 2026 Project A. Dashboard demo.</div></footer>
+
+<div class="modal" id="dashboardModal" aria-hidden="true">
+  <div class="modal-panel">
+    <button class="modal-close" onclick="closeModal('dashboardModal')">×</button>
+    <h2 id="dashboardItemTitle">Request</h2>
+    <p class="muted">This is a front-end sample. Real requests will come from a database.</p>
+    <div class="form">
+      <label>Status
+        <select>
+          <option>New</option>
+          <option>Contacted</option>
+          <option>Quoted</option>
+          <option>Booked</option>
+          <option>Completed</option>
+        </select>
+      </label>
+      <label>Your quote<input type="number" placeholder="250"></label>
+      <label>Message<textarea rows="5" placeholder="Hi, thanks for reaching out..."></textarea></label>
+      <button class="button primary" onclick="demoSaved('Quote response')">Save response</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
